@@ -233,7 +233,7 @@
           </div>
         </el-tab-pane>
         <el-tab-pane label="JS排序节点" name="second">
-          <el-link type="success" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+          <el-link 输入="success" :href="scriptConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
           <el-form label-position="left">
@@ -243,13 +243,13 @@
             </el-form-item>
           </el-form>
           <div style="float: right">
-            <el-button type="primary" @click="uploadScript = ''; dialogUploadConfigVisible = false">取 消</el-button>
-            <el-button type="primary" @click="confirmUploadScript" :disabled="uploadScript.length === 0">确 定
+            <el-button 输入="primary" @click="uploadScript = ''; dialogUploadConfigVisible = false">取 消</el-button>
+            <el-button 输入="primary" @click="confirmUploadScript" :disabled="uploadScript.length === 0">确 定
             </el-button>
           </div>
         </el-tab-pane>
         <el-tab-pane label="JS筛选节点" name="third">
-          <el-link type="warning" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
+          <el-link 输入="warning" :href="filterConfig" style="margin-bottom: 15px" target="_blank" icon="el-icon-info">
             参考案例
           </el-link>
           <el-form label-position="left">
@@ -259,8 +259,8 @@
             </el-form-item>
           </el-form>
           <div style="float: right">
-            <el-button type="primary" @click="uploadFilter = ''; dialogUploadConfigVisible = false">取 消</el-button>
-            <el-button type="primary" @click="confirmUploadScript" :disabled="uploadFilter.length === 0">确 定
+            <el-button 输入="primary" @click="uploadFilter = ''; dialogUploadConfigVisible = false">取 消</el-button>
+            <el-button 输入="primary" @click="confirmUploadScript" :disabled="uploadFilter.length === 0">确 定
             </el-button>
           </div>
         </el-tab-pane>
@@ -273,37 +273,37 @@
       </div>
       <el-form label-position="left">
         <el-form-item prop="uploadConfig">
-          <el-input v-model="loadConfig" type="textarea" :autosize="{ minRows: 15, maxRows: 15 }" maxlength="5000"
+          <el-input v-model="loadConfig" 输入="textarea" :autosize="{ minRows: 15, maxRows: 15 }" maxlength="5000"
             show-word-limit></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="loadConfig = ''; dialogLoadConfigVisible = false">取 消</el-button>
-        <el-button type="primary" @click="confirmLoadConfig" :disabled="loadConfig.length === 0">确 定
+        <el-button 输入="primary" @click="loadConfig = ''; dialogLoadConfigVisible = false">取 消</el-button>
+        <el-button 输入="primary" @click="confirmLoadConfig" :disabled="loadConfig.length === 0">确 定
         </el-button>
       </div>
     </el-dialog>
   </div>
 </template>
 <script>
-const project = process.env.VUE_APP_PROJECT
-const configScriptBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/api.php'
-const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
-const scriptConfigSample = process.env.VUE_APP_SCRIPT_CONFIG
-const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
-const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND
-const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
-const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
+const project = process.env。VUE_APP_PROJECT
+const configScriptBackend = process.env。VUE_APP_CONFIG_UPLOAD_BACKEND + '/api.php'
+const remoteConfigSample = process.env。VUE_APP_SUBCONVERTER_REMOTE_CONFIG
+const scriptConfigSample = process.env。VUE_APP_SCRIPT_CONFIG
+const filterConfigSample = process.env。VUE_APP_FILTER_CONFIG
+const defaultBackend = process.env。VUE_APP_SUBCONVERTER_DEFAULT_BACKEND
+const shortUrlBackend = process.env。VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
+const configUploadBackend = process.env。VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
 const basicVideo = process.env.VUE_APP_BASIC_VIDEO
-const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
+const advancedVideo = process.env。VUE_APP_ADVANCED_VIDEO
 const tgBotLink = process.env.VUE_APP_BOT_LINK
-const yglink = process.env.VUE_APP_YOUTUBE_LINK
-const bzlink = process.env.VUE_APP_BILIBILI_LINK
+const yglink = process.env。VUE_APP_YOUTUBE_LINK
+const bzlink = process.env。VUE_APP_BILIBILI_LINK
 const downld = 'http://' + window.location.host + '/download.html'
-export default {
+export 默认 {
   data() {
     return {
-      backendVersion: "",
+      backendVersion: ""，
       centerDialogVisible: false,
       activeName: 'first',
       // 是否为 PC 端
@@ -314,23 +314,23 @@ export default {
           Clash: "clash",
           "Surge4/5": "surge&ver=4",
           "Sing-Box": "singbox",
-          V2Ray: "v2ray",
+          V2Ray: "v2ray"，
           Trojan: "trojan",
           ShadowsocksR: "ssr",
-          "混合订阅（mixed）": "mixed",
+          "混合订阅（mixed）": "mixed"，
           Surfboard: "surfboard",
           Quantumult: "quan",
           "Quantumult X": "quanx",
           Loon: "loon",
-          Mellow: "mellow",
+          Mellow: "mellow"，
           Surge3: "surge&ver=3",
           Surge2: "surge&ver=2",
-          ClashR: "clashr",
+          ClashR: "clashr"，
           "Shadowsocks(SIP002)": "ss",
           "Shadowsocks Android(SIP008)": "sssub",
           ShadowsocksD: "ssd",
           "自动判断客户端": "auto",
-        },
+        }，
         shortTypes: {
           "v1.mk": "https://v1.mk/short",
           "d1.mk": "https://d1.mk/short",
@@ -338,8 +338,8 @@ export default {
           "suo.yt": "https://suo.yt/short",
         },
         customBackend: {
+          "私人反代订阅后端": "https://subapi.mgt.xx.kg"，
           "CM负载均衡后端【vless reality+hy1+hy2】": "https://subapi.cmliussss.net",
-          "CM应急备用后端【vless reality+hy1+hy2】": "https://subapi.fxxk.dedyn.io",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
           nameless13提供: "https://www.nameless13.com",
@@ -347,8 +347,8 @@ export default {
           "sub-web作者提供": "https://api.wcc.best",
         },
         backendOptions: [
+          { value: "https://subapi.mgt.xx.kg" },
           { value: "https://subapi.cmliussss.net" },
-          { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
           { value: "https://sub.d1.mk" },
           { value: "https://www.nameless13.com" },
@@ -490,83 +490,83 @@ export default {
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini_MultiMode.ini"
               }
             ]
-          },
+          }，
           {
-            label: "全网搜集规则",
+            label: "全网搜集规则"，
             options: [
               {
                 label: "常规规则",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG.ini"
-              },
+              }，
               {
-                label: "酷酷自用",
+                label: "酷酷自用"，
                 value: "https://raw.githubusercontent.com/xiaoshenxian233/cool/rule/complex.ini"
-              },
+              }，
               {
-                label: "PharosPro无测速",
+                label: "PharosPro无测速"，
                 value:
                   "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/special/phaors.ini"
-              },
+              }，
               {
-                label: "分区域故障转移",
+                label: "分区域故障转移"，
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Fallback.ini"
-              },
+              }，
               {
                 label: "分区域自动测速",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_Urltest.ini"
-              },
+              }，
               {
                 label: "分区域无自动测速",
                 value: "https://raw.githubusercontent.com/flyhigherpi/merlinclash_clash_related/master/Rule_config/ZHANG_Area_NoAuto.ini"
-              },
+              }，
               {
-                label: "OoHHHHHHH",
+                label: "OoHHHHHHH"，
                 value: "https://raw.githubusercontent.com/OoHHHHHHH/ini/master/config.ini"
-              },
+              }，
               {
-                label: "CFW-TAP",
+                label: "CFW-TAP"，
                 value: "https://raw.githubusercontent.com/OoHHHHHHH/ini/master/cfw-tap.ini"
-              },
+              }，
               {
                 label: "lhl77全分组（定期更新）",
                 value: "https://raw.githubusercontent.com/lhl77/sub-ini/main/tsutsu-full.ini"
-              },
+              }，
               {
-                label: "lhl77简易版（定期更新）",
+                label: "lhl77简易版（定期更新）"，
                 value: "https://raw.githubusercontent.com/lhl77/sub-ini/main/tsutsu-mini-gfw.ini"
-              },
+              }，
               {
                 label: "ConnersHua 神机规则 Outbound",
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/connershua_new.ini"
-              },
+              }，
               {
                 label: "ConnersHua 神机规则 Inbound 回国专用",
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/connershua_backtocn.ini"
-              },
+              }，
               {
-                label: "lhie1 洞主规则（使用 Clash 分组规则）",
+                label: "lhie1 洞主规则（使用 Clash 分组规则）"，
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/lhie1_clash.ini"
-              },
+              }，
               {
                 label: "lhie1 洞主规则完整版",
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/lhie1_dler.ini"
-              },
+              }，
               {
-                label: "eHpo1 规则",
+                label: "eHpo1 规则"，
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/ehpo1_main.ini"
-              },
+              }，
               {
-                label: "多策略组默认白名单模式",
+                label: "多策略组默认白名单模式"，
                 value: "https://raw.nameless13.com/api/public/dl/ROzQqi2S/white.ini"
-              },
+              }，
               {
-                label: "多策略组可以有效减少审计触发",
+                label: "多策略组可以有效减少审计触发"，
                 value: "https://raw.nameless13.com/api/public/dl/ptLeiO3S/mayinggfw.ini"
-              },
+              }，
               {
-                label: "精简策略默认白名单",
+                label: "精简策略默认白名单"，
                 value: "https://raw.nameless13.com/api/public/dl/FWSh3dXz/easy3.ini"
-              },
+              }，
               {
                 label: "多策略增加SMTP策略",
                 value: "https://raw.nameless13.com/api/public/dl/L_-vxO7I/youtube.ini"
@@ -981,66 +981,66 @@ export default {
           "&exclude=" + encodeURIComponent(this.form.excludeRemarks);
       }
       if (this.form.includeRemarks !== "") {
-        this.customSubUrl +=
-          "&include=" + encodeURIComponent(this.form.includeRemarks);
+        this。customSubUrl +=
+          "&include=" + encodeURIComponent(this。form.includeRemarks);
       }
-      if (this.form.filename !== "") {
-        this.customSubUrl +=
+      if (this。form。filename !== "") {
+        this。customSubUrl +=
           "&filename=" + encodeURIComponent(this.form.filename);
       }
       if (this.form.rename !== "") {
-        this.customSubUrl +=
-          "&rename=" + encodeURIComponent(this.form.rename);
+        this。customSubUrl +=
+          "&rename=" + encodeURIComponent(this。form。rename);
       }
-      if (this.form.interval !== "") {
-        this.customSubUrl +=
+      if (this。form.interval !== "") {
+        this。customSubUrl +=
           "&interval=" + encodeURIComponent(this.form.interval * 86400);
       }
-      if (this.form.devid !== "") {
-        this.customSubUrl +=
-          "&dev_id=" + encodeURIComponent(this.form.devid);
+      if (this。form.devid !== "") {
+        this。customSubUrl +=
+          "&dev_id=" + encodeURIComponent(this。form.devid);
       }
-      if (this.form.appendType) {
-        this.customSubUrl +=
-          "&append_type=" + this.form.appendType.toString();
+      if (this。form.appendType) {
+        this。customSubUrl +=
+          "&append_type=" + this。form.appendType。toString();
       }
       if (this.form.tls13) {
-        this.customSubUrl +=
-          "&tls13=" + this.form.tls13.toString();
+        this。customSubUrl +=
+          "&tls13=" + this。form。tls13.toString();
       }
-      if (this.form.sort) {
-        this.customSubUrl +=
+      if (this。form.sort) {
+        this。customSubUrl +=
           "&sort=" + this.form.sort.toString();
       }
-      this.customSubUrl +=
+      this。customSubUrl +=
         "&emoji=" +
-        this.form.emoji.toString() +
+        this。form。emoji.toString() +
         "&list=" +
-        this.form.nodeList.toString() +
+        this。form.nodeList.toString() +
         "&xudp=" +
-        this.form.xudp.toString() +
+        this。form。xudp。toString() +
         "&udp=" +
-        this.form.udp.toString() +
+        this。form。udp。toString() +
         "&tfo=" +
-        this.form.tfo.toString() +
+        this。form.tfo.toString() +
         "&expand=" +
-        this.form.expand.toString() +
+        this。form.expand.toString() +
         "&scv=" +
-        this.form.scv.toString() +
+        this。form.scv.toString() +
         "&fdn=" +
-        this.form.fdn.toString();
-      if (this.form.clientType.includes("surge")) {
-        if (this.form.tpl.surge.doh === true) {
-          this.customSubUrl += "&surge.doh=true";
+        this。form。fdn.toString();
+      if (this。form。clientType。includes("surge")) {
+        if (this。form。tpl。surge.doh === true) {
+          this。customSubUrl += "&surge.doh=true";
         }
       }
-      if (this.form.clientType === "clash") {
-        if (this.form.tpl.clash.doh === true) {
-          this.customSubUrl += "&clash.doh=true";
+      if (this。form.clientType === "clash") {
+        if (this。form。tpl.clash。doh === true) {
+          this。customSubUrl += "&clash.doh=true";
         }
-        this.customSubUrl += "&new_name=" + this.form.new_name.toString();
+        this。customSubUrl += "&new_name=" + this.form。new_name。toString();
       }
-      if (this.form.clientType === "singbox") {
+      if (this。form.clientType === "singbox") {
         if (this.form.tpl.singbox.ipv6 === true) {
           this.customSubUrl += "&singbox.ipv6=1";
         }
@@ -1310,3 +1310,4 @@ export default {
   }
 };
 </script>
+
