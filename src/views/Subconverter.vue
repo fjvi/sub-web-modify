@@ -23,7 +23,7 @@
               </el-form-item>
               <el-form-item label="生成类型:">
                 <el-select v-model="form.clientType" style="width: 100%">
-                  <el-option v-for="(v, k) in options.clientTypes" :key="k" :label="k" :value="v"></el-option>
+                  <el-option v-for="(v, k) 在 options.clientTypes" :key="k" :label="k" :value="v"></el-option>
                 </el-select>
               </el-form-item>
               <el-form-item label="后端地址:">
@@ -51,7 +51,7 @@
                   <el-collapse-item>
                     <template slot="title">
                       <el-form-item label="高级功能:" style="width: 100%;">
-                        <el-button type="limr" style="width: 100%;" icon="el-icon-more-outline">点击显示/隐藏
+                        <el-button 输入="limr" style="width: 100%;" icon="el-icon-more-outline">点击显示/隐藏
                         </el-button>
                       </el-form-item>
                     </template>
@@ -74,7 +74,7 @@
                       <el-input v-model="form.filename" placeholder="返回的订阅文件名，可以在支持文件名的客户端中显示出来" />
                     </el-form-item>
                     <el-form-item class="eldiy" label-width="0px">
-                      <el-row type="flex">
+                      <el-row 输入="flex">
                         <el-col>
                           <el-checkbox v-model="form.nodeList" label="仅输出节点信息" border></el-checkbox>
                         </el-col>
@@ -273,127 +273,128 @@
       </div>
       <el-form label-position="left">
         <el-form-item prop="uploadConfig">
-          <el-input v-model="loadConfig" type="textarea" :autosize="{ minRows: 15, maxRows: 15 }" maxlength="5000"
+          <el-input v-model="loadConfig" 输入="textarea" :autosize="{ minRows: 15， maxRows: 15 }" maxlength="5000"
             show-word-limit></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="loadConfig = ''; dialogLoadConfigVisible = false">取 消</el-button>
-        <el-button type="primary" @click="confirmLoadConfig" :disabled="loadConfig.length === 0">确 定
+        <el-button 输入="primary" @click="loadConfig = ''; dialogLoadConfigVisible = false">取 消</el-button>
+        <el-button 输入="primary" @click="confirmLoadConfig" :disabled="loadConfig.length === 0">确 定
         </el-button>
       </div>
     </el-dialog>
   </div>
 </template>
 <script>
-const project = process.env.VUE_APP_PROJECT
-const configScriptBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/api.php'
-const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
-const scriptConfigSample = process.env.VUE_APP_SCRIPT_CONFIG
-const filterConfigSample = process.env.VUE_APP_FILTER_CONFIG
-const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND
-const shortUrlBackend = process.env.VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
-const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
-const basicVideo = process.env.VUE_APP_BASIC_VIDEO
-const advancedVideo = process.env.VUE_APP_ADVANCED_VIDEO
-const tgBotLink = process.env.VUE_APP_BOT_LINK
-const yglink = process.env.VUE_APP_YOUTUBE_LINK
-const bzlink = process.env.VUE_APP_BILIBILI_LINK
+const project = process.env。VUE_APP_PROJECT
+const configScriptBackend = process.env。VUE_APP_CONFIG_UPLOAD_BACKEND + '/api.php'
+const remoteConfigSample = process.env。VUE_APP_SUBCONVERTER_REMOTE_CONFIG
+const scriptConfigSample = process.env。VUE_APP_SCRIPT_CONFIG
+const filterConfigSample = process.env。VUE_APP_FILTER_CONFIG
+const defaultBackend = process.env。VUE_APP_SUBCONVERTER_DEFAULT_BACKEND
+const shortUrlBackend = process.env。VUE_APP_MYURLS_DEFAULT_BACKEND + '/short'
+const configUploadBackend = process.env。VUE_APP_CONFIG_UPLOAD_BACKEND + '/sub.php'
+const basicVideo = process.env。VUE_APP_BASIC_VIDEO
+const advancedVideo = process.env。VUE_APP_ADVANCED_VIDEO
+const tgBotLink = process.env。VUE_APP_BOT_LINK
+const yglink = process.env。VUE_APP_YOUTUBE_LINK
+const bzlink = process.env。VUE_APP_BILIBILI_LINK
 const downld = 'http://' + window.location.host + '/download.html'
-export default {
+export 默认 {
   data() {
     return {
-      backendVersion: "",
-      centerDialogVisible: false,
-      activeName: 'first',
+      backendVersion: ""，
+      centerDialogVisible: false，
+      activeName: 'first'，
       // 是否为 PC 端
-      isPC: true,
-      btnBoolean: false,
+      isPC: true，
+      btnBoolean: false，
       options: {
         clientTypes: {
-          Clash: "clash",
-          "Surge4/5": "surge&ver=4",
-          "Sing-Box": "singbox",
-          V2Ray: "v2ray",
-          Trojan: "trojan",
-          ShadowsocksR: "ssr",
-          "混合订阅（mixed）": "mixed",
-          Surfboard: "surfboard",
-          Quantumult: "quan",
-          "Quantumult X": "quanx",
-          Loon: "loon",
-          Mellow: "mellow",
-          Surge3: "surge&ver=3",
-          Surge2: "surge&ver=2",
-          ClashR: "clashr",
-          "Shadowsocks(SIP002)": "ss",
-          "Shadowsocks Android(SIP008)": "sssub",
-          ShadowsocksD: "ssd",
-          "自动判断客户端": "auto",
-        },
+          Clash: "clash"，
+          "Surge4/5": "surge&ver=4"，
+          "Sing-Box": "singbox"，
+          V2Ray: "v2ray"，
+          Trojan: "trojan"，
+          ShadowsocksR: "ssr"，
+          "混合订阅（mixed）": "mixed"，
+          Surfboard: "surfboard"，
+          Quantumult: "quan"，
+          "Quantumult X": "quanx"，
+          Loon: "loon"，
+          Mellow: "mellow"，
+          Surge3: "surge&ver=3"，
+          Surge2: "surge&ver=2"，
+          ClashR: "clashr"，
+          "Shadowsocks(SIP002)": "ss"，
+          "Shadowsocks Android(SIP008)": "sssub"，
+          ShadowsocksD: "ssd"，
+          "自动判断客户端": "auto"，
+        }，
         shortTypes: {
-          "v1.mk": "https://v1.mk/short",
-          "d1.mk": "https://d1.mk/short",
-          "dlj.tf": "https://dlj.tf/short",
-          "suo.yt": "https://suo.yt/short",
-        },
+          "v1.mk": "https://v1.mk/short"，
+          "d1.mk": "https://d1.mk/short"，
+          "dlj.tf": "https://dlj.tf/short"，
+          "suo.yt": "https://suo.yt/short"，
+          "urlink": "https://urlink.pages.dev/create"，
+        }，
         customBackend: {
-          "私人反代后端": "https://subapi.mgt.xx.kg",
-          "CM应急备用后端【vless reality+hy1+hy2】": "https://subapi.fxxk.dedyn.io",
-          "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
-          "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
-          nameless13提供: "https://www.nameless13.com",
-          subconverter作者提供: "https://sub.xeton.dev",
-          "sub-web作者提供": "https://api.wcc.best",
-        },
+          "私人反代后端": "https://subapi.mgt.xx.kg"，
+          "CM应急备用后端【vless reality+hy1+hy2】": "https://subapi.fxxk.dedyn.io"，
+          "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk"，
+          "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk"，
+          nameless13提供: "https://www.nameless13.com"，
+          subconverter作者提供: "https://sub.xeton.dev"，
+          "sub-web作者提供": "https://api.wcc.best"，
+        }，
         backendOptions: [
           { value: "https://subapi.mgt.xx.kg" },
           { value: "https://subapi.fxxk.dedyn.io" },
           { value: "https://url.v1.mk" },
           { value: "https://sub.d1.mk" },
-          { value: "https://www.nameless13.com" },
+          { value: "https://www.nameless13.com" }，
           { value: "https://sub.xeton.dev" },
-          { value: "https://api.wcc.best" },
-        ],
+          { value: "https://api.wcc.best" }，
+        ]，
         remoteConfig: [
           {
-            label: "CM规则",
+            label: "CM规则"，
             options: [
               {
                 label: "CM_Online 默认版 识别港美地区(与Github同步)",
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini"
-              },
+              }，
               {
-                label: "CM_Online_MultiCountry 识别港美地区 负载均衡(与Github同步)",
+                label: "CM_Online_MultiCountry 识别港美地区 负载均衡(与Github同步)"，
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry.ini"
-              },
+              }，
               {
-                label: "CM_Online_MultiCountry_CF 识别港美地区、CloudFlareCDN 负载均衡 Worker节点专用(与Github同步)",
+                label: "CM_Online_MultiCountry_CF 识别港美地区、CloudFlareCDN 负载均衡 Worker节点专用(与Github同步)"，
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry_CF.ini"
               },
               {
-                label: "CM_Online_Full 识别多地区分组(与Github同步)",
+                label: "CM_Online_Full 识别多地区分组(与Github同步)"，
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full.ini"
               },
               {
-                label: "CM_Online_Full_CF 识别多地区、CloudFlareCDN 分组 Worker节点专用(与Github同步)",
+                label: "CM_Online_Full_CF 识别多地区、CloudFlareCDN 分组 Worker节点专用(与Github同步)"，
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_CF.ini"
               },
               {
-                label: "CM_Online_Full_MultiMode 识别多地区 负载均衡(与Github同步)",
+                label: "CM_Online_Full_MultiMode 识别多地区 负载均衡(与Github同步)"，
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"
-              },
+              }，
               {
-                label: "CM_Online_Full_MultiMode_CF 识别多地区、CloudFlareCDN 负载均衡 Worker节点专用(与Github同步)",
+                label: "CM_Online_Full_MultiMode_CF 识别多地区、CloudFlareCDN 负载均衡 Worker节点专用(与Github同步)"，
                 value: "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode_CF.ini"
               }
             ]
           },
           {
-            label: "通用",
+            label: "通用"，
             options: [
               {
-                label: "默认",
+                label: "默认"，
                 value: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini"
               },
               {
@@ -729,90 +730,90 @@ export default {
               {
                 label: "Maying",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/maying.ini"
-              },
+              }，
               {
-                label: "Ytoo",
+                label: "Ytoo"，
                 value: "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/ytoo.ini"
-              },
+              }，
               {
-                label: "w8ves",
+                label: "w8ves"，
                 value: "https://raw.nameless13.com/api/public/dl/M-We_Fn7/w8ves.ini"
-              },
+              }，
               {
-                label: "NyanCAT",
+                label: "NyanCAT"，
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/nyancat.ini"
-              },
+              }，
               {
-                label: "Nexitally",
+                label: "Nexitally"，
                 value: "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/nexitally.ini"
               },
               {
-                label: "SoCloud",
+                label: "SoCloud"，
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/socloud.ini"
-              },
+              }，
               {
-                label: "ARK",
+                label: "ARK"，
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/customized/ark.ini"
-              },
+              }，
               {
-                label: "N3RO",
+                label: "N3RO"，
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/n3ro_optimized.ini"
-              },
+              }，
               {
-                label: "Scholar",
+                label: "Scholar"，
                 value: "https://gist.githubusercontent.com/tindy2013/1fa08640a9088ac8652dbd40c5d2715b/raw/scholar_optimized.ini"
               },
               {
-                label: "Flowercloud",
+                label: "Flowercloud"，
                 value: "https://subweb.s3.fr-par.scw.cloud/RemoteConfig/customized/flower.ini"
               }
             ]
-          },
+          }，
           {
-            label: "特殊",
+            label: "特殊"，
             options: [
               {
                 label: "NeteaseUnblock",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/netease.ini"
-              },
+              }，
               {
-                label: "Basic",
+                label: "Basic"，
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/basic.ini"
               }
             ]
           }
         ]
-      },
+      }，
       form: {
-        sourceSubUrl: "",
+        sourceSubUrl: ""，
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://subapi.mgt.xx.kg" : this.getUrlParam(),
+        customBackend: this。getUrlParam() == "" ? "https://subapi.mgt.xx.kg" : this.getUrlParam(),
         shortType: "https://urlink.pages.dev/create",
-        remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini",
-        excludeRemarks: "",
-        includeRemarks: "",
+        remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini"，
+        excludeRemarks: ""，
+        includeRemarks: ""，
         filename: "",
         rename: "",
-        devid: "",
-        interval: "",
+        devid: ""，
+        interval: ""，
         emoji: true,
         nodeList: false,
         extraset: false,
-        tls13: false,
-        udp: false,
-        xudp: false,
+        tls13: false，
+        udp: false，
+        xudp: false，
         tfo: false,
-        sort: false,
-        expand: true,
-        scv: false,
+        sort: false，
+        expand: true，
+        scv: false，
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
-        new_name: true, // 是否使用 Clash 新字段
+        new_name: true， // 是否使用 Clash 新字段
         tpl: {
           surge: {
             doh: false // dns 查询是否使用 DoH
-          },
+          }，
           clash: {
             doh: false
           },
@@ -851,18 +852,18 @@ export default {
     let darkMedia = window.matchMedia('(prefers-color-scheme: dark)');
     let callback = (e) => {
       if (e.matches) {
-        this.anhei();
+        this。anhei();
       }
     };
     if (typeof darkMedia.addEventListener === 'function' || typeof lightMedia.addEventListener === 'function') {
       lightMedia.addEventListener('change', callback);
       darkMedia.addEventListener('change', callback);
     } //监听系统主题，自动切换！
-  },
+  }，
   methods: {
     selectChanged() {
-      this.getBackendVersion();
-    },
+      this。getBackendVersion();
+    }，
     getUrlParam() {
       let query = window.location.search.substring(1);
       let vars = query.split('&');
@@ -873,7 +874,7 @@ export default {
         }
       }
       return "";
-    },
+    }，
     anhei() {
       const getLocalTheme = window.localStorage.getItem("localTheme");
       const lightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)');
@@ -888,34 +889,34 @@ export default {
           document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
         } //根据当前时间来判断，用来对付QQ等不支持媒体变量查询的浏览器
         if (lightMode && lightMode.matches) {
-          document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
+          document.getElementsByTagName('body')[0]。setAttribute('class'， 'light-mode');
         }
         if (darkMode && darkMode.matches) {
-          document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
+          document.getElementsByTagName('body')[0]。setAttribute('class', 'dark-mode');
         } //根据窗口主题来判断当前主题！
       }
     },
     change() {
       var zhuti = document.getElementsByTagName('body')[0].className;
       if (zhuti === 'light-mode') {
-        document.getElementsByTagName('body')[0].setAttribute('class', 'dark-mode');
-        window.localStorage.setItem('localTheme', 'dark-mode');
+        document.getElementsByTagName('body')[0]。setAttribute('class', 'dark-mode');
+        window.localStorage。setItem('localTheme', 'dark-mode');
       }
       if (zhuti === 'dark-mode') {
-        document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
-        window.localStorage.setItem('localTheme', 'light-mode');
+        document.getElementsByTagName('body')[0]。setAttribute('class'， 'light-mode');
+        window.localStorage。setItem('localTheme', 'light-mode');
       }
-    },
+    }，
     tanchuang() {
-      this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px;color:red">apiurl.v1.mk已被蔷，请更换最新的url.v1.mk</span></strong></br><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">IEPL高端机场（<span style="color:blue">原生支持奈飞非自制剧、Disney Plus、HBO等各种流媒体，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用</span>）：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞、ChatGPT合租（<span style="color:blue">优惠码：feiyang</span>）：</span><span><a href="https://hezu.v1.mk/" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部资源群：</span><span><a href="https://115.metshop.top" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用！</br></div>`, '信息面板', {
-        confirmButtonText: '确定',
-        dangerouslyUseHTMLString: true,
+      this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px;color:red">apiurl.v1.mk已被蔷，请更换最新的url.v1.mk</span></strong></br><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">IEPL高端机场（<span style="color:blue">原生支持奈飞非自制剧、Disney Plus、HBO等各种流媒体，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用</span>）：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞、ChatGPT合租（<span style="color:blue">优惠码：feiyang</span>）：</span><span><a href="https://hezu.v1.mk/" style="color:red;font-size:20px;text-decoration:none">点击上车</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部资源群：</span><span><a href="https://115.metshop.top" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看，支持Chat-GPT和ISP住宅IP助力Tiktok等跨境贸易使用！</br></div>`， '信息面板', {
+        confirmButtonText: '确定'，
+        dangerouslyUseHTMLString: true，
         customClass: 'msgbox'
       });
-    },
+    }，
     onCopy() {
-      this.$message.success("已复制");
-    },
+      this。$message。success("已复制");
+    }，
     goToProject() {
       window.open(project);
     },
@@ -924,16 +925,16 @@ export default {
     },
     gotoBiliBili() {
       window.open(bzlink);
-    },
+    }，
     gotoYouTuBe() {
       window.open(yglink);
-    },
+    }，
     toolsDown() {
       window.open(downld);
     },
     gotoBasicVideo() {
       this.$alert("别忘了关注友善的肥羊哦！", {
-        type: "warning",
+        输入: "warning",
         confirmButtonText: '确定',
         customClass: 'msgbox',
         showClose: false,
@@ -1310,5 +1311,6 @@ export default {
   }
 };
 </script>
+
 
 
