@@ -787,7 +787,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: this.getUrlParam() == "" ? "https://subapi.mgt.xx.kg" : this.getUrlParam(),
-        shortType: "https://v1.mk/short",
+        shortType: "https://urlink.pages.dev/create",
         remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini",
         excludeRemarks: "",
         includeRemarks: "",
@@ -1310,4 +1310,5 @@ export default {
   }
 };
 </script>
+
 
