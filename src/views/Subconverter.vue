@@ -332,7 +332,7 @@ export default {
           "自动判断客户端": "auto",
         },
         shortTypes: {
-          "urlink": "https://urlink.pages.dev/create",
+          "urlink": "https://urlink.pages.dev/functions/create",
           "v1.mk": "https://v1.mk/short",
           "d1.mk": "https://d1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
@@ -790,7 +790,7 @@ export default {
         sourceSubUrl: "",
         clientType: "",
         customBackend: this.getUrlParam() == "" ? "https://subapi.mgt.xx.kg" : this.getUrlParam(),
-        shortType: "https://urlink.pages.dev/create",
+        shortType: "https://urlink.pages.dev/functions/create",
         remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_AdblockPlus.ini",
         excludeRemarks: "",
         includeRemarks: "",
@@ -1313,4 +1313,5 @@ export default {
   }
 };
 </script>
+
 
